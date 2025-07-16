@@ -13,7 +13,8 @@
     };
 
     const telegramBotToken = '7987417948:AAFZMx5v13s9YcLOsdtOMNc1dLDqAv8EURk';
-    const telegramChatId = '746586393';
+    const telegramChatIds = ['746586393', '238576207', '254621411']; 
+
 
     let message = `<b>📥 New Contact Form Submission</b>%0A`;
     message += `<b>First Name:</b> ${formData.firstName}%0A`;
@@ -24,43 +25,63 @@
     message += `<b>Schedule a Call:</b> ${formData.schedule}%0A`;
     message += `<b>Additional Info:</b> ${formData.additionalInfo || 'N/A'}`;
 
-    fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage?chat_id=${telegramChatId}&parse_mode=html&text=${message}`)
-      .then(response => {
-        if (response.ok) {
-          showMainregPopup('mainregSuccessPopup');
-          document.getElementById('contactForm').reset();
-        } else {
-          showMainregPopup('mainregErrorPopup');
-        }
-        // В обоих случаях закрываем форму
-        popupBg_camp.classList.remove('active');
-        popup_camp.classList.remove('active');
-        unlockScroll();
 
-      })
-      .catch(error => {
-        console.error('Telegram Error:', error);
-        showMainregPopup('mainregErrorPopup');
-        // Закрываем форму, но данные не сбрасываем
-        popupBg_camp.classList.remove('active');
-        popup_camp.classList.remove('active');
-        unlockScroll();
+    let sendCount = 0;
+    let errorCount = 0;
 
-      });
-  });
+    telegramChatIds.forEach(chatId => {
+      fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage?chat_id=${chatId}&parse_mode=html&text=${message}`)
+        .then(response => {
+          if (response.ok) {
+            sendCount++;
+          } else {
+            console.error(`Failed to send to chat ${chatId}`);
+            errorCount++;
+          }
 
-  function showMainregPopup(popupId) {
-    const popup = document.getElementById(popupId);
-    popup.style.display = 'block';
+          if (sendCount + errorCount === telegramChatIds.length) {
+            finalizeFormSubmit(errorCount === 0);
+          }
+        })
+        .catch(error => {
+          console.error(`Telegram Error for chat ${chatId}:`, error);
+          errorCount++;
 
-    popup.querySelector('.mainreg-popup-close-btn').addEventListener('click', () => {
-      popup.style.display = 'none';
+          if (sendCount + errorCount === telegramChatIds.length) {
+            finalizeFormSubmit(false);
+          }
+        });
     });
 
-    setTimeout(() => {
-      popup.style.display = 'none';
-    }, 15000);
-  }
+    // Отдельная функция завершения
+    function finalizeFormSubmit(success) {
+      if (success) {
+        showMainregPopup('mainregSuccessPopup');
+        document.getElementById('contactForm').reset();
+      } else {
+        showMainregPopup('mainregErrorPopup');
+      }
+
+      // Закрываем форму
+      popupBg_camp.classList.remove('active');
+      popup_camp.classList.remove('active');
+      unlockScroll();
+    }
+
+
+
+      function showMainregPopup(popupId) {
+        const popup = document.getElementById(popupId);
+        popup.style.display = 'block';
+
+        popup.querySelector('.mainreg-popup-close-btn').addEventListener('click', () => {
+          popup.style.display = 'none';
+        });
+
+        setTimeout(() => {
+          popup.style.display = 'none';
+        }, 15000);
+      }
 
 
 
