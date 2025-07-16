@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Juicify</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" type="text/css" href="css/main.css">
+
 </head>
 <body class="bg-white text-gray-800">
 
@@ -14,7 +16,10 @@
   <div class="max-w-7xl mx-auto flex justify-between items-center">
     
     <!-- Logo -->
-    <div class="text-2xl font-extrabold text-green-400 tracking-wide">Juicify</div>
+   <div class="text-2xl font-extrabold text-green-400 tracking-wide">
+  Juicify 🔋
+</div>
+
     
     <!-- Navigation (Desktop) -->
     <nav class="hidden md:flex space-x-10 text-sm font-medium">
@@ -219,20 +224,123 @@
 </section>
 
 
-  <!-- Reviews -->
-  <section class="py-12 px-4 bg-gray-100 section_shadow_grafit"  style="border-top-right-radius: 100px !important;">
-    <h2 class="text-2xl font-bold text-center mb-8">What Our Users Say</h2>
-    <div class="max-w-3xl mx-auto space-y-6">
-      <div class="bg-white p-6 rounded shadow">
-        <p>"Saved me at a music festival! Super handy."</p>
-        <span class="text-sm text-gray-500">— Alex</span>
+ <!-- Reviews Carousel -->
+<section class="py-12 px-4 bg-gray-100 section_shadow_grafit" style="border-top-right-radius: 100px !important;">
+  <h2 class="text-2xl font-bold text-center mb-8">What Our Users Say</h2>
+
+  <div class="swiper max-w-3xl mx-auto">
+    <div class="swiper-wrapper">
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <div class="bg-white p-6 rounded-xl shadow text-center">
+          <p class="mb-2 text-lg font-medium">"Saved me at a music festival! Super handy."</p>
+          <span class="text-sm text-gray-500">— Alex</span>
+        </div>
       </div>
-      <div class="bg-white p-6 rounded shadow">
-        <p>"I travel for work and this has been a game changer."</p>
-        <span class="text-sm text-gray-500">— Maria</span>
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <div class="bg-white p-6 rounded-xl shadow text-center">
+          <p class="mb-2 text-lg font-medium">"I travel for work and this has been a game changer."</p>
+          <span class="text-sm text-gray-500">— Maria</span>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="swiper-slide">
+        <div class="bg-white p-6 rounded-xl shadow text-center">
+          <p class="mb-2 text-lg font-medium">"No more low battery anxiety! Life saver."</p>
+          <span class="text-sm text-gray-500">— Jordan</span>
+        </div>
+      </div>
+
+       <!-- Slide 4 -->
+    <div class="swiper-slide">
+      <div class="bg-white p-6 rounded-xl shadow text-center">
+        <p class="mb-2 text-lg font-medium">"Charged my phone twice while on the beach. So convenient!"</p>
+        <span class="text-sm text-gray-500">— Ella</span>
       </div>
     </div>
-  </section>
+
+    <!-- Slide 5 -->
+    <div class="swiper-slide">
+      <div class="bg-white p-6 rounded-xl shadow text-center">
+        <p class="mb-2 text-lg font-medium">"The return process is super easy. Took less than a minute."</p>
+        <span class="text-sm text-gray-500">— Liam</span>
+      </div>
+    </div>
+
+    <!-- Slide 6 -->
+    <div class="swiper-slide">
+      <div class="bg-white p-6 rounded-xl shadow text-center">
+        <p class="mb-2 text-lg font-medium">"Loved the app design and how intuitive everything is."</p>
+        <span class="text-sm text-gray-500">— Ava</span>
+      </div>
+    </div>
+
+    <!-- Slide 7 -->
+    <div class="swiper-slide">
+      <div class="bg-white p-6 rounded-xl shadow text-center">
+        <p class="mb-2 text-lg font-medium">"Perfect for when I forgot my charger at home."</p>
+        <span class="text-sm text-gray-500">— Noah</span>
+      </div>
+    </div>
+
+    <!-- Slide 8 -->
+    <div class="swiper-slide">
+      <div class="bg-white p-6 rounded-xl shadow text-center">
+        <p class="mb-2 text-lg font-medium">"I use it during long layovers at airports. Super helpful!"</p>
+        <span class="text-sm text-gray-500">— Sophie</span>
+      </div>
+    </div>
+
+    <!-- Slide 9 -->
+    <div class="swiper-slide">
+      <div class="bg-white p-6 rounded-xl shadow text-center">
+        <p class="mb-2 text-lg font-medium">"Great value for money and always reliable."</p>
+        <span class="text-sm text-gray-500">— Ethan</span>
+      </div>
+    </div>
+
+    <!-- Slide 10 -->
+    <div class="swiper-slide">
+      <div class="bg-white p-6 rounded-xl shadow text-center">
+        <p class="mb-2 text-lg font-medium">"Saved my phone at a wedding — can’t thank you enough!"</p>
+        <span class="text-sm text-gray-500">— Mia</span>
+      </div>
+    </div>
+
+    <!-- Slide 11 -->
+    <div class="swiper-slide">
+      <div class="bg-white p-6 rounded-xl shadow text-center">
+        <p class="mb-2 text-lg font-medium">"Works like a charm every time. I’m a regular user now."</p>
+        <span class="text-sm text-gray-500">— Jacob</span>
+      </div>
+    </div>
+
+    <!-- Slide 12 -->
+    <div class="swiper-slide">
+      <div class="bg-white p-6 rounded-xl shadow text-center">
+        <p class="mb-2 text-lg font-medium">"Perfect companion for my delivery shifts."</p>
+        <span class="text-sm text-gray-500">— Emily</span>
+      </div>
+    </div>
+
+    <!-- Slide 13 -->
+    <div class="swiper-slide">
+      <div class="bg-white p-6 rounded-xl shadow text-center">
+        <p class="mb-2 text-lg font-medium">"Easy to find stations everywhere I go."</p>
+        <span class="text-sm text-gray-500">— Leo</span>
+      </div>
+    </div>
+    </div>
+
+
+
+
+    <!-- Pagination -->
+    <div class="swiper-pagination mt-4"></div>
+  </div>
+</section>
+
 
 
 
@@ -407,6 +515,8 @@
 
 
 <script type="text/javascript" src="js/form_for_tg.js"></script>
+
+<!-- toogle menu mobile -->
 <script>
   const toggle = document.getElementById('menu-toggle');
   const menu = document.getElementById('mobile-menu');
@@ -416,6 +526,21 @@
   });
 </script>
 
+
+<!-- carousel reviews -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    autoplay: {
+      delay: 5000,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+</script>
 
 </body>
 </html>

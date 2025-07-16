@@ -471,6 +471,16 @@ body.lock-scroll {
 
 
 
+/* carousel reviews bullets dots */
+  .swiper-pagination-bullet {
+    background-color: rgba(34, 197, 94, 0.3); /* светло-зеленый */
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #22c55e; /* Tailwind green-500 */
+  }
+
 
 
 
