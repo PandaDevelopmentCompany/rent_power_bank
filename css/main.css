@@ -1,0 +1,403 @@
+/* ============== */
+/* popup_camp */
+/* ============== */
+.popup__bg_camp {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100vh !important;
+    background: rgba(35, 59, 71, 0.714) !important;
+    opacity: 0 !important; 
+    pointer-events: none !important; 
+    transition: 0.5s all !important;
+    z-index: 99999 !important;
+    backdrop-filter: blur(4px) !important;
+}
+
+.popup__bg_camp.active { 
+    opacity: 1 !important; 
+    pointer-events: all !important;
+    transition: 0.5s all !important;
+}
+
+.popup_camp {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) scale(0) !important; 
+    background: #000000c1 !important;
+    width: 400px !important;
+    padding: 25px !important;
+    transition: 0.5s all !important;
+}
+
+.popup_camp.active { 
+    transform: translate(-50%, -50%) scale(1) !important; 
+    transition: 0.5s all !important;
+}
+
+@media screen and (max-width: 470px) {
+  .popup_camp.active {
+    width: 90% !important;
+  }
+}
+
+.close-popup_camp {
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    cursor: pointer !important;
+}
+
+.popup_camp label {
+    width: 100% !important;
+    margin-bottom: 10px !important;
+    display: flex !important;
+    flex-direction: column-reverse !important;
+}
+
+.popup_camp .label__text {
+    font-size: 14px !important;
+    font-weight: 300 !important;
+    color: #cfd0d3 !important;
+    margin-bottom: 5px !important;
+    line-height: 20px !important;
+}
+
+.popup_camp input {
+    height: 45px !important;
+    font-size: 18px !important;
+    outline: none !important;
+    border: 1px solid #cfd0d3 !important;
+    border-radius: 0.5em !important;
+    padding: 18px !important;
+    background: transparent !important;
+    transition: 0.5s all !important;
+    color: white !important;
+}
+
+.radio-group {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 8px !important;
+  margin-top: 6px !important;
+}
+
+.radio-option {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  color: white !important;
+  font-size: 14px !important;
+}
+
+.radio-option input[type="radio"] {
+  accent-color: #4ade80 !important;
+  width: 16px !important;
+  height: 16px !important;
+  cursor: pointer !important;
+}
+
+.radio-group label {
+    width: 10% !important;
+}
+
+.popup_camp input:focus {
+    border: 1px solid #4ade80 !important;
+    box-shadow: 0 0 10px #4ade80 !important;
+    background: transparent !important;
+    transition: 0.5s all !important;
+}
+
+.popup_camp input:focus + .label__text {
+    color: #4ade80 !important;
+}
+
+.popup_camp input:focus + .calendar-icon {
+  filter: drop-shadow(1px 1px 1px #4ade80) !important;
+}
+
+.popup_camp textarea {
+    resize: none !important;
+    width: 100% !important;
+    height: 150px !important;
+    outline: none !important;
+    border: 1px solid #cfd0d3 !important;
+    border-radius: 0.5em !important;
+    font-size: 18px !important;
+    padding: 10px !important;
+    background: transparent !important;
+    color: white !important;
+}
+
+.popup_camp textarea:focus {
+    border-bottom: 1px solid #4ade80 !important;
+    border: 1px solid #4ade80 !important;
+    box-shadow: 0 0 10px #4ade80 !important;
+    background: transparent !important;
+    transition: 0.5s all !important;
+}
+
+.popup_camp textarea:focus + .label__text {
+    color: #4ade80 !important;
+}
+
+.popup_camp button {
+    width: 100% !important;
+    height: 45px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #000000 !important;
+    font-size: 14px !important;
+    background: #4ade80 !important;
+    cursor: pointer !important;
+    transition: 0.5s all !important;
+    line-height: 1.75em !important;
+    font-weight: 400 !important;
+    border-radius: 5px !important;
+    letter-spacing: 2px !important;
+}
+
+.popup_camp button:hover {
+    background: #34d399 !important;
+    color: #fff !important;
+    transition: 0.5s all !important;
+}
+
+/* ============== */
+/* end popup_camp */
+/* ============== */
+
+.hidden_form_item {
+  display: none;
+}
+
+textarea::placeholder {
+  font-size: 12px !important;
+  line-height: 20px !important;
+  color: #dfdfdfa6 !important;
+}
+
+div.privacy_policy {
+  font-size: 10px !important;
+  line-height: 16px !important;
+  color: white !important;
+}
+
+#contact input {
+    padding-left: 10px !important;
+}
+#contact input:focus {
+    border-radius: 0.5em !important;
+}
+
+@media screen and (max-width: 768px) {
+  .popup_camp, .popup_service, .popup_receipt {
+    padding: 20px 20px 60px 20px !important;
+  }
+}
+
+.popup_camp {
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+  padding: 20px !important;
+  background: rgba(0, 0, 0, 0.8) !important;
+  border-radius: 10px !important;
+}
+.popup_service {
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+  padding: 20px !important;
+  background: rgba(0, 0, 0, 0.8) !important;
+  border-radius: 10px !important;
+}
+.popup_receipt {
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+  padding: 20px !important;
+  background: rgba(0, 0, 0, 0.8) !important;
+  border-radius: 10px !important;
+}
+
+.scrollable-form {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+.payment_info {
+  color: white !important;
+  font-size: 14px !important;
+  margin-bottom: 15px !important;
+  line-height: 1.5 !important;
+}
+
+.privacy_policy {
+  color: white !important;
+  font-size: 16px !important;
+  margin-top: 10px !important;
+}
+
+/* Форма регистрации. Иконка календаря */
+.date-container {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column-reverse !important;
+}
+
+.date-container input[type="date"] {
+  width: 100% !important;
+}
+
+.calendar-icon {
+  width: 20px !important;
+  position: absolute !important;
+  right: 10px !important;
+  top: 67% !important;
+  transform: translateY(-50%) !important;
+  color: #4ade80 !important;
+  cursor: pointer !important;
+}
+
+body.lock-scroll {
+    overflow: hidden;
+}
+
+/* Стили для уведомления (pop-up) */
+.popup-notification {
+  display: none;
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  color: white !important;
+  padding: 20px !important;
+  border-radius: 8px !important;
+  z-index: 9999 !important;
+  text-align: center !important;
+  width: 300px !important;
+}
+
+.popup-content p {
+  font-size: 16px !important;
+  margin-bottom: 20px !important;
+}
+
+.popup-close-btn {
+  background-color: #4ade80 !important;
+  color: white !important;
+  border: none !important;
+  padding: 10px !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
+}
+
+.popup-close-btn:hover {
+  background-color: #34d399 !important;
+}
+
+/* Стили для уведомления (mainreg pop-up) */
+.mainreg-popup-notification {
+  display: none;
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  color: white !important;
+  padding: 20px !important;
+  border-radius: 8px !important;
+  z-index: 9999 !important;
+  text-align: center !important;
+  width: 300px !important;
+}
+
+.mainreg-popup-content p {
+  font-size: 16px !important;
+  margin-bottom: 20px !important;
+}
+
+.mainreg-popup-close-btn {
+  background-color: #4ade80 !important;
+  color: white !important;
+  border: none !important;
+  padding: 10px !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
+}
+
+.mainreg-popup-close-btn:hover {
+  background-color: #34d399 !important;
+}
+
+/* Стили для select */
+.popup_camp select {
+  height: 45px !important;
+  font-size: 14px !important;
+  outline: none !important;
+  border: 1px solid #cfd0d3 !important;
+  border-radius: 0.5em !important;
+  padding: 10px 18px !important;
+  background: transparent !important;
+  color: white !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  transition: 0.5s all !important;
+  position: relative !important;
+  background-image: url('img/arrow-down.svg') !important;
+  background-repeat: no-repeat !important;
+  background-position: right 10px center !important;
+  background-size: 12px !important;
+}
+
+.popup_camp select:focus {
+  border: 1px solid #4ade80 !important;
+  box-shadow: 0 0 10px #4ade80 !important;
+  transition: 0.5s all !important;
+}
+
+.popup_camp option {
+  background-color: #233b47 !important;
+  color: white !important;
+  font-size: 16px !important;
+}
+
+.popup_camp select option:hover {
+  background-color: #34d399 !important;
+  color: #fff !important;
+}
+
+/* уведомления application-info */
+@media screen and (max-width: 1240px) {
+  .application-info {
+    width: 90% !important;
+  }
+}
+@media screen and (max-width: 576px) {
+  .elementor-widget-icon-box, .application-info_2 {
+    margin: 10px auto !important;
+  }
+  .application-info_1 {
+    margin: 20px auto !important;
+  }
+  #registrationForm {
+    padding-bottom: 90px !important;
+  }
+}
+
+/* подвал footer */
+.elementor-element-349802a,
+.elementor-element-33c4dab {
+  padding-left: 5% !important;
+  padding-right: 5% !important;
+}
+.elementor-element-33c4dab {
+  padding-top: 30px !important;
+}
