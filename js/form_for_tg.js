@@ -12,7 +12,7 @@
       additionalInfo: document.getElementById('additionalInfo').value.trim()
     };
 
-    const telegramBotToken = '7542517520:AAE4I49ZLYolTP1s97cTwwUIh6riJgg9eOI';
+    const telegramBotToken = '7987417948:AAFZMx5v13s9YcLOsdtOMNc1dLDqAv8EURk';
     const telegramChatId = '746586393';
 
     let message = `<b>📥 New Contact Form Submission</b>%0A`;
