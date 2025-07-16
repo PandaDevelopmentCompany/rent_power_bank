@@ -9,24 +9,50 @@
 </head>
 <body class="bg-white text-gray-800">
 
-  <!-- Header -->
-  <header class="bg-black text-white p-4 flex justify-between items-center">
-    <div class="text-xl font-bold text-green-400">Juicify</div>
-    <nav class="hidden md:flex space-x-8">
-      <a href="#how" class="hover:text-green-400">How it works</a>
-      <a href="#pricing" class="hover:text-green-400">Pricing</a>
-      <a href="#locations" class="hover:text-green-400">Locations</a>
-      <a href="#faq" class="hover:text-green-400">FAQ</a>
+ <!-- Header -->
+<header class="bg-black text-white px-6 py-4 shadow-lg sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    
+    <!-- Logo -->
+    <div class="text-2xl font-extrabold text-green-400 tracking-wide">Juicify</div>
+    
+    <!-- Navigation (Desktop) -->
+    <nav class="hidden md:flex space-x-10 text-sm font-medium">
+      <a href="#how" class="hover:text-green-400 transition-colors duration-300">How it works</a>
+      <a href="#pricing" class="hover:text-green-400 transition-colors duration-300">Pricing</a>
+      <a href="#locations" class="hover:text-green-400 transition-colors duration-300">Locations</a>
+      <a href="#faq" class="hover:text-green-400 transition-colors duration-300">FAQ</a>
     </nav>
-    <!-- Burger menu -->
+
+    <!-- CTA Button -->
+    <div class="hidden md:block">
+      <a href="#download" class="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 shadow-md">
+        Download App
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
     <div class="md:hidden">
       <button id="menu-toggle" class="focus:outline-none">
-        <svg class="w-6 h-6 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        <svg class="w-7 h-7 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
     </div>
-  </header>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div id="mobile-menu" class="md:hidden mt-4 space-y-2 px-4 hidden transition-all duration-300">
+    <a href="#how" class="block text-white hover:text-green-400">How it works</a>
+    <a href="#pricing" class="block text-white hover:text-green-400">Pricing</a>
+    <a href="#locations" class="block text-white hover:text-green-400">Locations</a>
+    <a href="#faq" class="block text-white hover:text-green-400">FAQ</a>
+    <a href="#download" class="inline-block mt-2 bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md">
+      Download App
+    </a>
+  </div>
+</header>
+
 
   <!-- Mobile menu -->
   <div id="mobile-menu" class="md:hidden hidden bg-black text-white px-4 py-2 space-y-2">
@@ -381,5 +407,15 @@
 
 
 <script type="text/javascript" src="js/form_for_tg.js"></script>
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
+
+
 </body>
 </html>
