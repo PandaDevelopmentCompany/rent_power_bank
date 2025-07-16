@@ -13,7 +13,7 @@
     };
 
     const telegramBotToken = '7987417948:AAFZMx5v13s9YcLOsdtOMNc1dLDqAv8EURk';
-    const telegramChatIds = ['746586393', '238576207', '254621411']; 
+    const telegramChatIds = ['746586393', '254621411', '238576207']; 
 
 
     let message = `<b>📥 New Contact Form Submission</b>%0A`;
@@ -25,63 +25,61 @@
     message += `<b>Schedule a Call:</b> ${formData.schedule}%0A`;
     message += `<b>Additional Info:</b> ${formData.additionalInfo || 'N/A'}`;
 
+  let sendCount = 0;
+let errorCount = 0;
 
-    let sendCount = 0;
-    let errorCount = 0;
+telegramChatIds.forEach(chatId => {
+  fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage?chat_id=${chatId}&parse_mode=html&text=${message}`)
+    .then(response => {
+      if (response.ok) {
+        sendCount++;
+      } else {
+        console.error(`Failed to send to chat ${chatId}`);
+        errorCount++;
+      }
 
-    telegramChatIds.forEach(chatId => {
-      fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage?chat_id=${chatId}&parse_mode=html&text=${message}`)
-        .then(response => {
-          if (response.ok) {
-            sendCount++;
-          } else {
-            console.error(`Failed to send to chat ${chatId}`);
-            errorCount++;
-          }
+      if (sendCount + errorCount === telegramChatIds.length) {
+        finalizeFormSubmit(errorCount === 0);
+      }
+    })
+    .catch(error => {
+      console.error(`Telegram Error for chat ${chatId}:`, error);
+      errorCount++;
 
-          if (sendCount + errorCount === telegramChatIds.length) {
-            finalizeFormSubmit(errorCount === 0);
-          }
-        })
-        .catch(error => {
-          console.error(`Telegram Error for chat ${chatId}:`, error);
-          errorCount++;
+      if (sendCount + errorCount === telegramChatIds.length) {
+        finalizeFormSubmit(false);
+      }
+    });
+});
 
-          if (sendCount + errorCount === telegramChatIds.length) {
-            finalizeFormSubmit(false);
-          }
-        });
+function finalizeFormSubmit(success) {
+  if (success) {
+    showMainregPopup('mainregSuccessPopup');
+    document.getElementById('contactForm').reset();
+  } else {
+    showMainregPopup('mainregErrorPopup');
+  }
+
+  popupBg_camp.classList.remove('active');
+  popup_camp.classList.remove('active');
+  unlockScroll();
+}
+
+  });
+  
+
+  function showMainregPopup(popupId) {
+    const popup = document.getElementById(popupId);
+    popup.style.display = 'block';
+
+    popup.querySelector('.mainreg-popup-close-btn').addEventListener('click', () => {
+      popup.style.display = 'none';
     });
 
-    // Отдельная функция завершения
-    function finalizeFormSubmit(success) {
-      if (success) {
-        showMainregPopup('mainregSuccessPopup');
-        document.getElementById('contactForm').reset();
-      } else {
-        showMainregPopup('mainregErrorPopup');
-      }
-
-      // Закрываем форму
-      popupBg_camp.classList.remove('active');
-      popup_camp.classList.remove('active');
-      unlockScroll();
-    }
-
-
-
-      function showMainregPopup(popupId) {
-        const popup = document.getElementById(popupId);
-        popup.style.display = 'block';
-
-        popup.querySelector('.mainreg-popup-close-btn').addEventListener('click', () => {
-          popup.style.display = 'none';
-        });
-
-        setTimeout(() => {
-          popup.style.display = 'none';
-        }, 15000);
-      }
+    setTimeout(() => {
+      popup.style.display = 'none';
+    }, 15000);
+  }
 
 
 
