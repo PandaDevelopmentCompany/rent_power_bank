@@ -194,12 +194,6 @@ div.privacy_policy {
     border-radius: 0.5em !important;
 }
 
-@media screen and (max-width: 768px) {
-  .popup_camp, .popup_service, .popup_receipt {
-    padding: 20px 20px 60px 20px !important;
-  }
-}
-
 .popup_camp {
   max-height: 90vh !important;
   overflow-y: auto !important;
@@ -402,7 +396,11 @@ body.lock-scroll {
   padding-top: 30px !important;
 }
 
-
+@media screen and (max-width: 768px) {
+  .popup_camp, .popup_service, .popup_receipt {
+    padding: 20px 20px 60px 20px !important;
+  }
+}
 
 
 
