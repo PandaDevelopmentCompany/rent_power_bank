@@ -561,6 +561,30 @@
 
 
 
+<!-- navbar scroll-->
+<script>
+  let lastScrollTop = 0;
+  const header = document.querySelector('header');
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+      // Скроллим вниз — скрываем navbar
+      header.classList.add('hide');
+      header.classList.remove('show');
+    } else {
+      // Скроллим вверх — показываем navbar
+      header.classList.add('show');
+      header.classList.remove('hide');
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Для iOS
+  });
+</script>
+
+
+
+
 
 
 <script type="text/javascript" src="js/form_for_tg.js"></script>
