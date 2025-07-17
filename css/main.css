@@ -484,8 +484,49 @@ body.lock-scroll {
 
 
 
+/* кнопка связи в углу */
+.charge-button {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #00c853, #64dd17);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 200, 83, 0.4);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 9999;
+  animation: pulse 2s infinite;
+}
 
+.charge-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 24px rgba(0, 200, 83, 0.6);
+}
 
+.charge-icon {
+  width: 28px;
+  height: 28px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 200, 83, 0.5);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 12px rgba(0, 200, 83, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 200, 83, 0);
+  }
+}
 
 
 
