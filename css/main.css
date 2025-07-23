@@ -1,7 +1,7 @@
 /* ============== */
-/* popup_camp */
+/* popup_juicify */
 /* ============== */
-.popup__bg_camp {
+.popup__bg_juicify {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
@@ -15,13 +15,13 @@
     backdrop-filter: blur(4px) !important;
 }
 
-.popup__bg_camp.active { 
+.popup__bg_juicify.active { 
     opacity: 1 !important; 
     pointer-events: all !important;
     transition: 0.5s all !important;
 }
 
-.popup_camp {
+.popup_juicify {
     position: absolute !important;
     top: 50% !important;
     left: 50% !important;
@@ -32,32 +32,32 @@
     transition: 0.5s all !important;
 }
 
-.popup_camp.active { 
+.popup_juicify.active { 
     transform: translate(-50%, -50%) scale(1) !important; 
     transition: 0.5s all !important;
 }
 
 @media screen and (max-width: 470px) {
-  .popup_camp.active {
+  .popup_juicify.active {
     width: 90% !important;
   }
 }
 
-.close-popup_camp {
+.close-popup_juicify {
     position: absolute !important;
     top: 10px !important;
     right: 10px !important;
     cursor: pointer !important;
 }
 
-.popup_camp label {
+.popup_juicify label {
     width: 100% !important;
     margin-bottom: 10px !important;
     display: flex !important;
     flex-direction: column-reverse !important;
 }
 
-.popup_camp .label__text {
+.popup_juicify .label__text {
     font-size: 14px !important;
     font-weight: 300 !important;
     color: #cfd0d3 !important;
@@ -65,7 +65,7 @@
     line-height: 20px !important;
 }
 
-.popup_camp input {
+.popup_juicify input {
     height: 45px !important;
     font-size: 18px !important;
     outline: none !important;
@@ -104,22 +104,22 @@
     width: 10% !important;
 }
 
-.popup_camp input:focus {
+.popup_juicify input:focus {
     border: 1px solid #4ade80 !important;
     box-shadow: 0 0 10px #4ade80 !important;
     background: transparent !important;
     transition: 0.5s all !important;
 }
 
-.popup_camp input:focus + .label__text {
+.popup_juicify input:focus + .label__text {
     color: #4ade80 !important;
 }
 
-.popup_camp input:focus + .calendar-icon {
+.popup_juicify input:focus + .calendar-icon {
   filter: drop-shadow(1px 1px 1px #4ade80) !important;
 }
 
-.popup_camp textarea {
+.popup_juicify textarea {
     resize: none !important;
     width: 100% !important;
     height: 150px !important;
@@ -132,7 +132,7 @@
     color: white !important;
 }
 
-.popup_camp textarea:focus {
+.popup_juicify textarea:focus {
     border-bottom: 1px solid #4ade80 !important;
     border: 1px solid #4ade80 !important;
     box-shadow: 0 0 10px #4ade80 !important;
@@ -140,11 +140,11 @@
     transition: 0.5s all !important;
 }
 
-.popup_camp textarea:focus + .label__text {
+.popup_juicify textarea:focus + .label__text {
     color: #4ade80 !important;
 }
 
-.popup_camp button {
+.popup_juicify button {
     width: 100% !important;
     height: 45px !important;
     display: flex !important;
@@ -161,14 +161,14 @@
     letter-spacing: 2px !important;
 }
 
-.popup_camp button:hover {
+.popup_juicify button:hover {
     background: #34d399 !important;
     color: #fff !important;
     transition: 0.5s all !important;
 }
 
 /* ============== */
-/* end popup_camp */
+/* end popup_juicify */
 /* ============== */
 
 .hidden_form_item {
@@ -194,7 +194,7 @@ div.privacy_policy {
     border-radius: 0.5em !important;
 }
 
-.popup_camp {
+.popup_juicify {
   max-height: 90vh !important;
   overflow-y: auto !important;
   padding: 20px !important;
@@ -331,7 +331,7 @@ body.lock-scroll {
 }
 
 /* Стили для select */
-.popup_camp select {
+.popup_juicify select {
   height: 45px !important;
   font-size: 14px !important;
   outline: none !important;
@@ -351,19 +351,19 @@ body.lock-scroll {
   background-size: 12px !important;
 }
 
-.popup_camp select:focus {
+.popup_juicify select:focus {
   border: 1px solid #4ade80 !important;
   box-shadow: 0 0 10px #4ade80 !important;
   transition: 0.5s all !important;
 }
 
-.popup_camp option {
+.popup_juicify option {
   background-color: #233b47 !important;
   color: white !important;
   font-size: 16px !important;
 }
 
-.popup_camp select option:hover {
+.popup_juicify select option:hover {
   background-color: #34d399 !important;
   color: #fff !important;
 }
@@ -397,7 +397,7 @@ body.lock-scroll {
 }
 
 @media screen and (max-width: 768px) {
-  .popup_camp, .popup_service, .popup_receipt {
+  .popup_juicify, .popup_service, .popup_receipt {
     padding: 20px 20px 80px 20px !important;
   }
 }

@@ -60,13 +60,13 @@ function finalizeFormSubmit(success) {
     showMainregPopup('mainregErrorPopup');
   }
 
-  popupBg_camp.classList.remove('active');
-  popup_camp.classList.remove('active');
+  popupBg_juicify.classList.remove('active');
+  popup_juicify.classList.remove('active');
   unlockScroll();
 }
 
   });
-  
+
 
   function showMainregPopup(popupId) {
     const popup = document.getElementById(popupId);
@@ -92,11 +92,11 @@ function finalizeFormSubmit(success) {
 // popup форма для отправки заявки
 
 // popup
-let popupBg_camp = document.querySelector('.popup__bg_camp');
-let popup_camp = document.querySelector('.popup_camp');
-let openPopupButtons_camp = document.querySelectorAll('.open-popup_camp'); 
-let closePopupButton_camp = document.querySelector('.close-popup_camp'); 
-let closePopupButtonSubmit_camp = document.querySelector('.close_through_submit_camp');
+let popupBg_juicify = document.querySelector('.popup__bg_juicify');
+let popup_juicify = document.querySelector('.popup_juicify');
+let openPopupButtons_juicify = document.querySelectorAll('.open-popup_juicify'); 
+let closePopupButton_juicify = document.querySelector('.close-popup_juicify'); 
+let closePopupButtonSubmit_juicify = document.querySelector('.close_through_submit_juicify');
 
 // Проверка на заполненность полей
 function checkFormValidity() {
@@ -129,42 +129,42 @@ function unlockScroll() {
 }
 
 // Проверяем, существуют ли элементы, прежде чем вешать обработчики событий
-if (openPopupButtons_camp) {
-    openPopupButtons_camp.forEach((button) => { 
+if (openPopupButtons_juicify) {
+    openPopupButtons_juicify.forEach((button) => { 
         button.addEventListener('click', (e) => {
             e.preventDefault();
-            if (popupBg_camp && popup_camp) {
-                popupBg_camp.classList.add('active');
-                popup_camp.classList.add('active');
+            if (popupBg_juicify && popup_juicify) {
+                popupBg_juicify.classList.add('active');
+                popup_juicify.classList.add('active');
                 lockScroll();
             }
         });
     });
 }
 
-if (closePopupButton_camp) {
-    closePopupButton_camp.addEventListener('click', () => {
-        if (popupBg_camp && popup_camp) {
-            popupBg_camp.classList.remove('active');
-            popup_camp.classList.remove('active');
+if (closePopupButton_juicify) {
+    closePopupButton_juicify.addEventListener('click', () => {
+        if (popupBg_juicify && popup_juicify) {
+            popupBg_juicify.classList.remove('active');
+            popup_juicify.classList.remove('active');
             unlockScroll();
         }
     });
 }
 
 document.addEventListener('click', (e) => {
-    if (popupBg_camp && e.target === popupBg_camp) {
-        popupBg_camp.classList.remove('active');
-        popup_camp.classList.remove('active');
+    if (popupBg_juicify && e.target === popupBg_juicify) {
+        popupBg_juicify.classList.remove('active');
+        popup_juicify.classList.remove('active');
         unlockScroll();
     }
 });
 
-if (closePopupButtonSubmit_camp) {
-    closePopupButtonSubmit_camp.addEventListener('click', () => {
-        if (checkFormValidity() && popupBg_camp && popup_camp) {
-            popupBg_camp.classList.remove('active');
-            popup_camp.classList.remove('active');
+if (closePopupButtonSubmit_juicify) {
+    closePopupButtonSubmit_juicify.addEventListener('click', () => {
+        if (checkFormValidity() && popupBg_juicify && popup_juicify) {
+            popupBg_juicify.classList.remove('active');
+            popup_juicify.classList.remove('active');
             unlockScroll();
         }
     });
