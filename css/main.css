@@ -404,6 +404,13 @@ body.lock-scroll {
 .popup_juicify select option {
   white-space: normal; /* чтобы текст переносился внутри выпадающего списка */
 }
+.popup_juicify select {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 }
 
 
