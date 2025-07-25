@@ -400,6 +400,10 @@ body.lock-scroll {
   .popup_juicify, .popup_service, .popup_receipt {
     padding: 20px 20px 80px 20px !important;
   }
+/* select */
+.popup_juicify select option {
+  white-space: normal; /* чтобы текст переносился внутри выпадающего списка */
+}
 }
 
 
@@ -569,7 +573,6 @@ header.hide {
 header.show {
   transform: translateY(0);
 }
-
 
 
 
